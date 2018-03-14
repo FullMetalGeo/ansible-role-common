@@ -10,5 +10,5 @@ common_packages:
   - policycoreutils-python
   - net-tools
 
-pip_poackages:
+pip_packages:
   - awscli
