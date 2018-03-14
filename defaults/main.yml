@@ -9,3 +9,6 @@ common_packages:
   - libselinux-python
   - policycoreutils-python
   - net-tools
+
+pip_poackages:
+  - awscli  
