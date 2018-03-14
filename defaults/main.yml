@@ -11,4 +11,4 @@ common_packages:
   - net-tools
 
 pip_poackages:
-  - awscli  
+  - awscli
