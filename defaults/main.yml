@@ -1,7 +1,6 @@
 common_packages:
   - python-devel
   - python-pip
-  - awscli
   - git
   - wget
   - htop
