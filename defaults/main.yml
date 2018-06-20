@@ -13,3 +13,4 @@ common_packages:
 pip_packages:
   - awscli
   - boto3
+  - boto
