@@ -5,6 +5,12 @@
     state: latest
   with_items: "{{ common_packages }}"
 
+- name: Install ansible with pip for Amazon Linux
+  pip:
+    name: ansible
+    state: latest
+  when: ansible_distribution == "Amazon"
+
 - name: Install packages via pip
   pip:
     name: "{{ item }}"
