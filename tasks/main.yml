@@ -1,8 +1,6 @@
 ---
-- name: Setup RHEL Based Distros
-  include_tasks: setup-rhel.yml
+- include_tasks: setup-rhel.yml
   when: ansible_os_family == "RedHat"
 
-- name: Setup Amazon Linux Distros
-  include_tasks: setup-amazon.yml
+- include_tasks: setup-amazon.yml
   when: ansible_distribution == "Amazon"
