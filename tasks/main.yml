@@ -1,23 +1,8 @@
 ---
-- name: Update all packages
-  yum:
-    name: '*'
-    state: latest
+- name: Setup RHEL Based Distros
+  include_tasks: setup-rhel.yml
+  when: ansible_os_family == "RedHat"
 
-- name: Install Common Packages
-  yum:
-    name: "{{ item }}"
-    state: latest
-  with_items: "{{ common_packages }}"
-
-- name: Install ansible with pip for Amazon Linux
-  pip:
-    name: ansible
-    state: latest
+- name: Setup Amazon Linux Distros
+  include_tasks: setup-amazon.yml
   when: ansible_distribution == "Amazon"
-
-- name: Install packages via pip
-  pip:
-    name: "{{ item }}"
-    state: latest
-  with_items: "{{ pip_packages }}"

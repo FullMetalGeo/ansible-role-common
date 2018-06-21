@@ -1,0 +1,21 @@
+---
+- name: Update all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install Common Packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_flattened:
+    - "{{ common_packages }}"
+    - "{{ amazon_packages }}"
+
+- name: Install packages via pip
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_flattened:
+    - "{{ pip_packages }}"
+    - "{{ amazon_pip_packages }}"

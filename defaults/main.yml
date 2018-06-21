@@ -8,9 +8,20 @@ common_packages:
   - libselinux-python
   - policycoreutils-python
   - net-tools
-  - ansible
+  - vim
 
 pip_packages:
   - awscli
   - boto3
   - boto
+
+amazon_packages:
+  - python36
+
+amazon_pip_packages:
+  - ansible
+
+redhat_packages:
+  - ansible
+
+redhat_pip_packages: []
