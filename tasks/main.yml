@@ -1,4 +1,14 @@
----
+--
+- name: Check if inside AWS.
+  uri:
+    url: http://169.254.169.254/latest/meta-data
+    timeout: 2
+  register: aws_uri_check
+  failed_when: False
+
+- set_fact:
+    is_aws_environment: "{{ aws_uri_check.status == 200 }}"
+
 - include_tasks: setup-rhel.yml
   when: ansible_os_family == "RedHat"
 
