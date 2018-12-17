@@ -9,8 +9,8 @@
     name: "{{ item }}"
     state: latest
   with_items:
-    - common_packages
-    - debian_packages
+    - "{{ common_packages }}"
+    - "{{ debian_packages }}"
 
 - name: Install packages via pip
   pip:
