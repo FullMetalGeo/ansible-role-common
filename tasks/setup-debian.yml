@@ -14,9 +14,12 @@
 
 - name: Install packages via pip
   pip:
-    name: ["{{ pip_packages }}","{{ debian_pip_packages }}"]
+    name: "{{ item }}"
     state: latest
     executable: pip3
+  with_items:
+    - "{{ pip_packages }}"
+    - "{{ debian_pip_packages }}"
 
 - name: Install AWS SSM Agent
   apt:
