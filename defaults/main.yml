@@ -25,3 +25,8 @@ redhat_packages:
   - ansible
 
 redhat_pip_packages: []
+
+debian_packages:
+  - ansible
+
+debian_pip_packages: []
