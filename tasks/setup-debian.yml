@@ -6,8 +6,11 @@
 
 - name: Install Common Packages
   apt:
-    name: ["{{ common_packages }}", "{{ debian_packages }}"]
+    name: "{{ item }}"
     state: latest
+  with_items:
+    - common_packages
+    - debian_packages
 
 - name: Install packages via pip
   pip:
