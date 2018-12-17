@@ -1,8 +1,8 @@
 ---
 - name: Update all packages
-  apy:
-    name: '*'
-    state: latest
+  apt:
+    update_cache: yes
+    upgrade: dist
 
 - name: Install Common Packages
   apy:
