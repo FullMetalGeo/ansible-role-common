@@ -5,7 +5,7 @@
     upgrade: dist
 
 - name: Install Common Packages
-  apy:
+  apt:
     name: "{{ item }}"
     state: latest
   with_flattened:
