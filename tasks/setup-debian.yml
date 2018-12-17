@@ -13,6 +13,7 @@
   pip:
     name: "{{ item }}"
     state: latest
+    executable: pip3
   with_flattened:
     - "{{ pip_packages }}"
     - "{{ debian_pip_packages }}"
