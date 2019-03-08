@@ -22,7 +22,7 @@
     - "{{ debian_pip_packages }}"
 
 - name: Check for reboot
-  shell: if [ $(rpm -q kernel|tail -n 1) != kernel-$(uname -r) ]; then echo 'reboot'; else echo 'no'; fi
+  shell: if [ -f /var/run/reboot-required ]; then echo 'reboot'; else echo 'no'; fi
   ignore_errors: true
   register: reboot_hint
 
