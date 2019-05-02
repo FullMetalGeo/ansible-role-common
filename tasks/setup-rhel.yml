@@ -6,19 +6,13 @@
 
 - name: Install Common Packages
   yum:
-    name: "{{ item }}"
-    state: latest
-  with_flattened:
-    - "{{ common_packages }}"
-    - "{{ redhat_packages }}"
+    name: "{{ common_packages + redhat_packages }}"
+    state: latest:
 
 - name: Install packages via pip
   pip:
-    name: "{{ item }}"
+    name: "{{ pip_packages + redhat_pip_packages }}"
     state: latest
-  with_flattened:
-    - "{{ pip_packages }}"
-    - "{{ redhat_pip_packages }}"
 
 - name: Install AWS SSM Agent
   yum:

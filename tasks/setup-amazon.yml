@@ -6,16 +6,10 @@
 
 - name: Install Common Packages
   yum:
-    name: "{{ item }}"
+    name: "{{ common_packages + amazon_packages }}"
     state: latest
-  with_flattened:
-    - "{{ common_packages }}"
-    - "{{ amazon_packages }}"
 
 - name: Install packages via pip
   pip:
-    name: "{{ item }}"
+    name: "{{ pip_packages + amazon_pip_packages }}"
     state: latest
-  with_flattened:
-    - "{{ pip_packages }}"
-    - "{{ amazon_pip_packages }}"
