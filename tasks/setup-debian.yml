@@ -6,16 +6,12 @@
 
 - name: Install Common Packages
   apt:
-    name:
-      - "{{ common_packages }}"
-      - "{{ debian_packages }}"
+    name: "{{ common_packages + debian_packages }}"
     state: latest
 
 - name: Install packages via pip
   pip:
-    name:
-      - "{{ pip_packages }}"
-      - "{{ debian_pip_packages }}"
+    name: "{{ pip_packages + debian_pip_packages }}"
     state: latest
     executable: pip3
 
