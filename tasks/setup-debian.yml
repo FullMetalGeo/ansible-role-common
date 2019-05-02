@@ -6,20 +6,18 @@
 
 - name: Install Common Packages
   apt:
-    name: "{{ item }}"
+    name:
+      - "{{ common_packages }}"
+      - "{{ debian_packages }}"
     state: latest
-  with_items:
-    - "{{ common_packages }}"
-    - "{{ debian_packages }}"
 
 - name: Install packages via pip
   pip:
-    name: "{{ item }}"
+    name:
+      - "{{ pip_packages }}"
+      - "{{ debian_pip_packages }}"
     state: latest
     executable: pip3
-  with_items:
-    - "{{ pip_packages }}"
-    - "{{ debian_pip_packages }}"
 
 - name: Check for reboot
   shell: if [ -f /var/run/reboot-required ]; then echo 'reboot'; else echo 'no'; fi
