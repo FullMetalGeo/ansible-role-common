@@ -13,3 +13,4 @@
   pip:
     name: "{{ pip_packages + amazon_pip_packages }}"
     state: latest
+    extra_args: "{{ pip_extra_args }}"
