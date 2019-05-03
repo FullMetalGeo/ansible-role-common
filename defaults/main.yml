@@ -15,7 +15,7 @@ pip_packages:
   - boto3
   - boto
 
-pip_extra_args: "-i https://nexus.fmgeo.com/repository/fmgeo-pypi/simple"
+pip_extra_args: "-i https://pypi.python.org/simple -i https://nexus.fmgeo.com/repository/fmgeo-pypi/simple"
 
 amazon_packages:
   - python36
