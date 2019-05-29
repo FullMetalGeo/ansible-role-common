@@ -7,7 +7,7 @@
 - name: Install Common Packages
   yum:
     name: "{{ common_packages + redhat_packages }}"
-    state: latest:
+    state: latest
 
 - name: Install packages via pip
   pip:
