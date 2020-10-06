@@ -10,7 +10,7 @@
     is_aws_environment: "{{ aws_uri_check.status == 200 }}"
 
 - include_tasks: setup-rhel.yml
-  when: ansible_os_family == "RedHat"
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - include_tasks: setup-amazon.yml
   when: ansible_distribution == "Amazon"
