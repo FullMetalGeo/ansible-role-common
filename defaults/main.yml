@@ -18,7 +18,7 @@ pip_packages:
 pip_extra_args: "-i https://pypi.python.org/simple"
 
 amazon_packages:
-  - python36
+  - python37
 
 amazon_pip_packages:
   - ansible
